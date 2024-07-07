@@ -1,7 +1,22 @@
 export const headers = [
-    "Pair",
-    "TVL",
-    "24h Volume",
-    "24h Fees",
-    "24h APR",
+    {
+        key: "PAIR",
+        width: 12
+    },
+    {
+        key: "TVL",
+        width: 5
+    },
+    {
+        key: "1D VOL",
+        width: 6
+    },
+    {
+        key: "1D FEE",
+        width: 6
+    },
+    {
+        key: "1D APR",
+        width: 6
+    }
 ]

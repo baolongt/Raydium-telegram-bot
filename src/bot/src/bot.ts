@@ -29,20 +29,31 @@ export class BotHandler {
             ]
         });
 
-        const resHTML = `
-<b>All Liquidity Pools </b>
-
-<pre>
+        let head = ''
+        switch (params.poolType) {
+            case 'all':
+                head = '__All Liquidity Pools__'
+                break;
+            case 'concentrated':
+                head = '__Concentrated Liquidity Pools__'
+                break;
+            case 'standard':
+                head = '__Standard Liquidity Pools__'
+                break;
+        }
+        const resp = `
+${head}
+\`\`\`
 ${buildTable(data, headers)}
-</pre>
+\`\`\`
+
         `
 
-        console.log(resHTML)
+        console.log(resp)
 
 
-        return ctx.reply(
-            resHTML,
-            { parse_mode: 'HTML' }
+        return ctx.replyWithMarkdownV2(
+            resp
         )
     }
 

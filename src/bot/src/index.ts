@@ -16,7 +16,7 @@ bot.hears('/all', async (ctx) => {
     })
 })
 
-bot.command("/concentrated", async (ctx) => {
+bot.hears("/concentrated", async (ctx) => {
     await handler.getPoolList(ctx, {
         poolType: "concentrated",
         pageSize: 10,
@@ -24,7 +24,7 @@ bot.command("/concentrated", async (ctx) => {
     })
 })
 
-bot.command("/standard", async (ctx) => {
+bot.hears("/standard", async (ctx) => {
     await handler.getPoolList(ctx, {
         poolType: "standard",
         pageSize: 10,
